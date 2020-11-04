@@ -1,18 +1,15 @@
 package be.intecbrussel;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
+import java.util.*;
 
 public class PlayList {
     private String playListName;
-    private ArrayList<Song> songsPlayList;
+    private ArrayList<Song> songsPlayList = new ArrayList<>();;
+    public HashSet<Song>  masterPlaylist = new HashSet();
 
     public PlayList(){}
 
     public PlayList(String playListName) {
-        songsPlayList = new ArrayList<>();
         this.playListName = playListName;
     }
 

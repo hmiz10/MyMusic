@@ -4,57 +4,51 @@ import java.util.*;
 
 public class MusicCollection {
     private String musicCollectionName;
-    private Map<String, Song> collectionPlaylist = new HashMap<>();
+    private Map<String, PlayList> musicCollectionPlaylist = new HashMap<>();
 
+    public MusicCollection() {
+
+    }
 
     public MusicCollection(String musicCollectionName) {
         this.musicCollectionName = musicCollectionName;
     }
 
     public void addSongToPlaylist (String playlistName, Song songObject){
-        collectionPlaylist.put(playlistName, songObject);
+      Map<String, Song> mapOfSongs = new HashMap<>();
+      mapOfSongs.put(playlistName, songObject);
     }
 
     public void removeSongFromPlaylist (String playlistName, Song songObject){
-        collectionPlaylist.remove(playlistName, songObject);
+        musicCollectionPlaylist.remove(playlistName, songObject);
     }
 
     public void addPlaylist (PlayList playListObject){
-       List<PlayList> listOfPlaylists = new ArrayList<>();
+       Map<String, PlayList> mapOfPlaylists = new HashMap<>();
 
-       if (playListObject != null && !collectionPlaylist.containsKey(playListObject)){
-           listOfPlaylists.add(playListObject);
-       } else {
-           System.out.println("The playlist already exists in the list!");
-       }
+       mapOfPlaylists.entrySet().add((Map.Entry<String, PlayList>) playListObject);
     }
 
     public void removePlaylist (PlayList playlistObject){
-        collectionPlaylist.remove(playlistObject);
+        musicCollectionPlaylist.remove(playlistObject);
     }
 
     public int countOfPlaylistsCollection(){
-        return collectionPlaylist.size();
+        return musicCollectionPlaylist.size();
     }
 
-    public Map<String, Integer> countsOfSongsInPlaylist (Collection<String> playlistName){
+    public int countsOfSongsInPlaylist (String playlistName){
 
-        Map<String, Integer> map = new HashMap<>();
+        Map<String, Integer> mapOfPlaylists = new HashMap<>();
 
-        for(String sObj: playlistName){
-            Integer i = map.get(sObj);
-            if(i == null){
-                map.put(sObj, 1);
-            } else {
-                map.put(sObj, i++);
-            }
-        }
-        return map;
+        mapOfPlaylists.get(playlistName);
+
+        return mapOfPlaylists.entrySet().stream().mapToInt(Map.Entry::getValue).sum();
     }
 
     public void displayPlaylistInCollection(){
-        for (int i = 0; i < collectionPlaylist.size() ; i++) {
-            System.out.println(collectionPlaylist.get(i));
+        for (int i = 0; i < musicCollectionPlaylist.size() ; i++) {
+            System.out.println(musicCollectionPlaylist.get(i));
         }
     }
 

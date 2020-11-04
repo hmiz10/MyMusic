@@ -1,18 +1,19 @@
 package be.intecbrussel;
 
+import java.time.Duration;
 import java.time.LocalTime;
 
 public class Song {
     private String title;
     private String artist;
     private String album;
-    private LocalTime playingTime;
+    private Duration playingTime;
 
     public Song() {
 
     }
 
-    public Song(String title, String artist, String album, LocalTime playingTime) {
+    public Song(String title, String artist, String album, Duration playingTime) {
         this.title = title;
         this.artist = artist;
         this.album = album;
@@ -43,11 +44,11 @@ public class Song {
         this.album = album;
     }
 
-    public LocalTime getPlayingTime() {
+    public Duration getPlayingTime() {
         return playingTime;
     }
 
-    public void setPlayingTime(LocalTime playingTime) {
+    public void setPlayingTime(Duration playingTime) {
         this.playingTime = playingTime;
     }
 
