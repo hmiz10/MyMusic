@@ -1,10 +1,7 @@
 
-S	java:S106"9Replace this use of System.out or System.err by a logger.(›§¯ıÿÿÿÿ
+T	java:S106;"9Replace this use of System.out or System.err by a logger.(­×‘8ªµ°œÙ.
+T
+java:S1068"7Remove this unused "musicCollectionName" private field.(Ş¾€ı8¦¨šÙ.
 P
-java:S18541"5Remove this useless assignment to local variable "i".(ı¯ÍÓüÿÿÿÿ
-N	java:S1069"9Replace this use of System.out or System.err by a logger.(éÎšù
-I
-java:S1172="3Remove this unused method parameter "playlistName".(™øÅ»
-M	java:S106A"9Replace this use of System.out or System.err by a logger.(­×‘
-M
-java:S1068"7Remove this unused "musicCollectionName" private field.(Ş¾€ı
+java:S11727"3Remove this unused method parameter "playlistName".(™øÅ»8ªµ°œÙ.
+U	java:S1063"9Replace this use of System.out or System.err by a logger.(Ì’ªû8ªµ°œÙ.

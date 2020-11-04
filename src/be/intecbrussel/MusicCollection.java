@@ -6,17 +6,14 @@ public class MusicCollection {
     private String musicCollectionName;
     private Map<String, PlayList> musicCollectionPlaylist = new HashMap<>();
 
-    public MusicCollection() {
-
-    }
+    public MusicCollection() {}
 
     public MusicCollection(String musicCollectionName) {
         this.musicCollectionName = musicCollectionName;
     }
 
     public void addSongToPlaylist (String playlistName, Song songObject){
-      Map<String, Song> mapOfSongs = new HashMap<>();
-      mapOfSongs.put(playlistName, songObject);
+        musicCollectionPlaylist.get(playlistName).addSong(songObject);
     }
 
     public void removeSongFromPlaylist (String playlistName, Song songObject){
@@ -24,9 +21,7 @@ public class MusicCollection {
     }
 
     public void addPlaylist (PlayList playListObject){
-       Map<String, PlayList> mapOfPlaylists = new HashMap<>();
-
-       mapOfPlaylists.entrySet().add((Map.Entry<String, PlayList>) playListObject);
+        musicCollectionPlaylist.put(playListObject.getPlayListName(), playListObject);
     }
 
     public void removePlaylist (PlayList playlistObject){
@@ -38,12 +33,7 @@ public class MusicCollection {
     }
 
     public int countsOfSongsInPlaylist (String playlistName){
-
-        Map<String, Integer> mapOfPlaylists = new HashMap<>();
-
-        mapOfPlaylists.get(playlistName);
-
-        return mapOfPlaylists.entrySet().stream().mapToInt(Map.Entry::getValue).sum();
+        return musicCollectionPlaylist.get(playlistName).getSongs().size();
     }
 
     public void displayPlaylistInCollection(){
@@ -58,5 +48,13 @@ public class MusicCollection {
         for (int i = 0; i < songsInPlaylist.size() ; i++) {
             System.out.println(songsInPlaylist.get(i));
         }
+    }
+
+    @Override
+    public String toString() {
+        return "MusicCollection{" +
+                "musicCollectionName='" + musicCollectionName + '\'' +
+                ", musicCollectionPlaylist=" + musicCollectionPlaylist +
+                '}';
     }
 }
